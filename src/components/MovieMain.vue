@@ -3,7 +3,7 @@
     <ul>
         <li>Titolo: {{element.title}}</li>
         <li>Titolo Originale: {{element.original_title}}</li>
-        <li>Lingua: {{element.original_language}}</li>
+        <li>Lingua: {{element.original_language}} <lang-flag :iso="element.original_language" /></li>
         <li>Voto: {{element.vote_average}}</li>
     </ul>
   </div>

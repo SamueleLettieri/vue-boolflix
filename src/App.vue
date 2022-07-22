@@ -7,6 +7,9 @@
 
 <script>
 import axios from "axios";
+import Vue from 'vue';
+import LangFlag from 'vue-lang-code-flags';
+Vue.component('lang-flag', LangFlag);
 import BoolflixHeader from './components/BoolflixHeader.vue'
 import BoolflixMain from './components/BoolflixMain.vue'
 export default {
@@ -14,6 +17,7 @@ export default {
   components: {
     BoolflixHeader,
     BoolflixMain,
+    LangFlag,
   },
   data: function() {
     return{
