@@ -1,7 +1,7 @@
 <template>
   <header class="d-flex m-3">
-    <input type="text" v-model="searchBar" @keyup.enter="$emit('search', searchBar)">
-    <div class="ms_button ms-3" ><a href="" @click="$emit('search', searchBar)">cerca</a></div>
+    <input type="text" v-model="searchBar" @keyup.enter="$emit('searchMovie', searchBar)"  v-on:keyup.enter="$emit('searchTv', searchBar)">
+    <div class="ms_button ms-3" ><a href="" @click="$emit('searchMovie', searchBar)">cerca</a></div>
   </header>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
         data: function() {
         return{
-            searchBar: "",
+            searchBar: " ",
         }
     }
 }
