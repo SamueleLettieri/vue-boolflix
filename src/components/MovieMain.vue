@@ -1,12 +1,12 @@
 <template>
   <div class="ms_box mx-2">
-      <div class=""><img class="ms_img" :src="`http://image.tmdb.org/t/p/w342/${element.poster_path}`" alt=""></div>
+      <div class=""><img class="ms_img" :src="`http://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt=""></div>
     <ul class="ms_position">
-        <li>Titolo: {{element.title}}</li>
-        <li>Titolo Originale: {{element.original_title}}</li>
-        <li>Lingua: {{element.original_language}} <lang-flag :iso="element.original_language" /></li>
+        <li>Titolo: {{movie.title}}</li>
+        <li :class="{'d-none': movie.title === movie.original_title}">Titolo Originale: {{movie.original_title}}</li>
+        <li>Lingua: {{movie.original_language}} <lang-flag :iso="movie.original_language" /></li>
         <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class="n <= voto() ? 'fa-solid ms_star-yellow' : 'fa-regular' "></i></li> 
-        <li class="ms_overflow">overview: {{element.overview}}</li>
+        <li class="ms_overflow">overview: {{movie.overview}}</li>
     </ul>
   </div>
 </template>
@@ -14,7 +14,7 @@
 <script>
 export default {
 props:[
-    "element"
+    "movie"
 ],
 data:function() {
     return{
@@ -24,9 +24,9 @@ data:function() {
 
 methods:{
     voto(){
-        return Math.ceil(this.element.vote_average / 2) 
+        return Math.ceil(this.movie.vote_average / 2) 
 
-        /* {{  voto(element) }} */
+        /* {{  voto(movie) }} */
     }
 }
 

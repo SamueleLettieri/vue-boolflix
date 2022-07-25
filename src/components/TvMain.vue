@@ -3,7 +3,7 @@
       <div class=""><img class="ms_img" :src="`http://image.tmdb.org/t/p/w342/${serie.poster_path}`" alt=""></div>
     <ul class="ms_position">
         <li>Titolo: {{serie.name}}</li>
-        <li>Titolo Originale: {{serie.original_name}}</li>
+        <li :class="{'d-none': serie.title === serie.original_title}">Titolo Originale: {{serie.original_name}}</li>
         <li>Lingua: {{serie.original_language}} <lang-flag :iso="serie.original_language" /></li>
         <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class="n <= voto() ? 'fa-solid ms_star-yellow' : 'fa-regular' "></i></li> 
         <li class="ms_overflow">overview: {{serie.overview}}</li>
@@ -28,7 +28,7 @@ methods:{
     voto(){
       return  Math.ceil(this.serie.vote_average / 2) 
 
-        /* {{  voto(element) }} */
+        /* {{  voto(serie) }} */
     }
 },
 

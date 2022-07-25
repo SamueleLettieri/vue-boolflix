@@ -54,10 +54,6 @@ export default {
     },
     
   },
-  created(){
-    this.getMovies();
-    this.getTv();
-  }
 }
 </script>
 

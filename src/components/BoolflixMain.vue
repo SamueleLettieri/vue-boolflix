@@ -1,7 +1,7 @@
 <template>
-  <main class="p-5 mt-5 d-flex ms_background-grey">
-    <MovieMain v-for="element in movies" :key="element.id"
-    :element="element"/>
+  <main class="p-5 mt-5 d-flex ms_background-grey" >
+    <MovieMain v-for="movie in movies" :key="movie.id"
+    :movie="movie"/>
 
     <TvMain v-for="serie in tv" :key="serie.id"
     :serie="serie"/>
@@ -32,8 +32,8 @@ props:{
 
 <style lang="scss" scoped>
 .ms_background-grey{
-  width: 100%;
   width: 10053px;
+  max-width: 10053px;
   height: 100vh;
   background-color: #434343;
 }

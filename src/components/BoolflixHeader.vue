@@ -2,7 +2,7 @@
   <header>
     <div class="d-flex  justify-content-between pt-3 px-4">
         <h2>BOOLFLIX</h2>
-        <div><input class="ms_input mt-2" type="text" v-model="searchBar" @keyup.enter="$emit('searchMovie', searchBar)"  v-on:keyup.enter="$emit('searchTv', searchBar)"></div>
+        <div><input class="ms_input mt-2" type="text" v-model.trim="searchBar" @keyup.enter="$emit('searchMovie', searchBar)"  v-on:keyup.enter="$emit('searchTv', searchBar)"></div>
     </div>    
   </header>
 </template>
