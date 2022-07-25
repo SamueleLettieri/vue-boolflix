@@ -39,7 +39,11 @@ methods:{
     width: 345px;
     height: 500px;
     background-color: black;
+    position: relative;
+}
 
+.ms_box:hover{
+    border: 1px solid white;
 }
 
 .ms_img{
@@ -48,9 +52,13 @@ methods:{
     height: 500px;
 }
 
+.ms_box:hover .ms_img{
+    display: none;
+}
+
 .ms_position{
-    position: relative;
-    bottom: 335px;
+    position: absolute;
+    bottom: 235px;
     color: white;
 }
 

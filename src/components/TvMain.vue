@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <ul>
-        <li><img :src="`http://image.tmdb.org/t/p/w342/${serie.poster_path}`" alt=""></li>
+  <div class="ms_box mx-2">
+      <div class=""><img class="ms_img" :src="`http://image.tmdb.org/t/p/w342/${serie.poster_path}`" alt=""></div>
+    <ul class="ms_position">
         <li>Titolo: {{serie.name}}</li>
         <li>Titolo Originale: {{serie.original_name}}</li>
         <li>Lingua: {{serie.original_language}} <lang-flag :iso="serie.original_language" /></li>
-        <li>Voto: {{ Math.ceil(serie.vote_average / 2)  }}</li> 
+        <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class=" voto(serie) ? 'fa-solid' : 'fa-regular' "></i></li> 
     </ul>
   </div>
 </template>
@@ -23,7 +23,11 @@ data:function(){
 },
 
 methods:{
+    voto(element){
+        Math.ceil(element.vote_average / 2) 
 
+        /* {{  voto(element) }} */
+    }
 },
 
 created(){
@@ -33,6 +37,35 @@ created(){
 }
 </script>
 
-<style>
-  
+<style lang="scss" scoped>
+.ms_box{
+    width: 345px;
+    height: 500px;
+    background-color: black;
+    position: relative;
+}
+
+.ms_box:hover{
+    border: 1px solid white;
+}
+
+.ms_img{
+    width: 345px;
+    object-fit: cover;
+    height: 500px;
+}
+
+.ms_box:hover .ms_img{
+    display: none;
+}
+
+.ms_position{
+    position: absolute;
+    bottom: 235px;
+    color: white;
+}
+
+li{
+    list-style: none;
+}
 </style> 
