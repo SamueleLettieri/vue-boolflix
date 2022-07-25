@@ -19,6 +19,7 @@ export default {
     BoolflixMain,
     LangFlag,
   },
+
   data: function() {
     return{
       movies: [],
@@ -28,6 +29,7 @@ export default {
 
     }
   },
+
   methods: {
     getMovies(ricerca) {
       axios.get(`${this.apiMovies}&query=${ricerca}`)
@@ -49,7 +51,8 @@ export default {
       .catch((error) => {
         console.warn(error)
       })
-    }
+    },
+    
   },
   created(){
     this.getMovies();

@@ -1,7 +1,9 @@
 <template>
-  <header class="d-flex m-3">
-    <input type="text" v-model="searchBar" @keyup.enter="$emit('searchMovie', searchBar)"  v-on:keyup.enter="$emit('searchTv', searchBar)">
-    <div class="ms_button ms-3" ><a href="" @click="$emit('searchMovie', searchBar)">cerca</a></div>
+  <header>
+    <div class="d-flex  justify-content-between pt-3 px-4">
+        <h2>BOOLFLIX</h2>
+        <div><input class="ms_input mt-2" type="text" v-model="searchBar" @keyup.enter="$emit('searchMovie', searchBar)"  v-on:keyup.enter="$emit('searchTv', searchBar)"></div>
+    </div>    
   </header>
 </template>
 
@@ -16,13 +18,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a{
-    text-decoration: none;
-    color: white;
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
 }
 
-.ms_button{
-    padding: 10px;
-    background-color: blue;
+h2{
+    color: red;
 }
+
+.ms_input{
+    outline: none;
+    height: 25px;
+}
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="p-5 mt-5 d-flex ms_background-grey">
     <MovieMain v-for="element in movies" :key="element.id"
     :element="element"/>
 
@@ -29,3 +29,10 @@ props:{
 }
 }
 </script>
+
+<style lang="scss" scoped>
+.ms_background-grey{
+    width: 15100px;
+    background-color: #434343;
+}
+</style>
