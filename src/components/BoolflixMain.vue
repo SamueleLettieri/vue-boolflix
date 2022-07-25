@@ -32,7 +32,9 @@ props:{
 
 <style lang="scss" scoped>
 .ms_background-grey{
-    width: 10053px;
-    background-color: #434343;
+  width: 100%;
+  width: 10053px;
+  height: 100vh;
+  background-color: #434343;
 }
 </style>

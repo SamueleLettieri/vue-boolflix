@@ -5,7 +5,9 @@
         <li>Titolo: {{serie.name}}</li>
         <li>Titolo Originale: {{serie.original_name}}</li>
         <li>Lingua: {{serie.original_language}} <lang-flag :iso="serie.original_language" /></li>
-        <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class="n <= voto() ? 'fa-solid' : 'fa-regular' "></i></li> 
+        <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class="n <= voto() ? 'fa-solid ms_star-yellow' : 'fa-regular' "></i></li> 
+        <li class="ms_overflow">overview: {{serie.overview}}</li>
+
     </ul>
   </div>
 </template>
@@ -61,7 +63,7 @@ created(){
 
 .ms_position{
     position: absolute;
-    bottom: 235px;
+    top: 140px;
     color: white;
     display: none;
 }
@@ -73,6 +75,21 @@ created(){
 
 li{
     list-style: none;
+}
+
+.ms_star-yellow{
+    color: yellow;
+}
+
+.ms_overflow{
+    height: 170px;
+    overflow: auto;
+}
+
+.ms_overflow::-webkit-scrollbar {
+  width: 5px;
+  background: rgb(163, 163, 163); 
+  border-radius: 4px;  
 }
 
 </style> 

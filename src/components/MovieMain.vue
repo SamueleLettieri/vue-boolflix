@@ -5,7 +5,8 @@
         <li>Titolo: {{element.title}}</li>
         <li>Titolo Originale: {{element.original_title}}</li>
         <li>Lingua: {{element.original_language}} <lang-flag :iso="element.original_language" /></li>
-        <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class="n <= voto() ? 'fa-solid' : 'fa-regular' "></i></li> 
+        <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class="n <= voto() ? 'fa-solid ms_star-yellow' : 'fa-regular' "></i></li> 
+        <li class="ms_overflow">overview: {{element.overview}}</li>
     </ul>
   </div>
 </template>
@@ -40,10 +41,12 @@ methods:{
     height: 500px;
     background-color: black;
     position: relative;
+
 }
 
 .ms_box:hover{
     border: 1px solid white;
+
 }
 
 .ms_img{
@@ -58,7 +61,7 @@ methods:{
 
 .ms_position{
     position: absolute;
-    bottom: 235px;
+    top: 145px;
     color: white;
     display: none;
 }
@@ -69,5 +72,20 @@ methods:{
 
 li{
     list-style: none;
+}
+
+.ms_star-yellow{
+    color: yellow;
+}
+
+.ms_overflow{
+    height: 170px;
+    overflow: auto;
+}
+
+.ms_overflow::-webkit-scrollbar {
+  width: 5px;
+  background: rgb(163, 163, 163); 
+  border-radius: 4px;  
 }
 </style> 
