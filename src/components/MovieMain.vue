@@ -5,7 +5,7 @@
         <li>Titolo: {{element.title}}</li>
         <li>Titolo Originale: {{element.original_title}}</li>
         <li>Lingua: {{element.original_language}} <lang-flag :iso="element.original_language" /></li>
-        <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class=" voto(element) ? 'fa-solid' : 'fa-regular' "></i></li> 
+        <li>Voto:  <i class="fa-star" v-for="n in 5" :key="n" :class="n <= voto() ? 'fa-solid' : 'fa-regular' "></i></li> 
     </ul>
   </div>
 </template>
@@ -22,8 +22,8 @@ data:function() {
 },
 
 methods:{
-    voto(element){
-        Math.ceil(element.vote_average / 2) 
+    voto(){
+        return Math.ceil(this.element.vote_average / 2) 
 
         /* {{  voto(element) }} */
     }
@@ -60,6 +60,11 @@ methods:{
     position: absolute;
     bottom: 235px;
     color: white;
+    display: none;
+}
+
+.ms_box:hover .ms_position{
+    display: block;
 }
 
 li{
